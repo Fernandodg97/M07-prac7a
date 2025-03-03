@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+	<!-- Tag del nombre mediante donde accederemos al recurso -->
+	<persistence-unit name="UPEstudiantes" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<!-- Añadimos ente class todas las clases que queremos gestionar -->
+		<class>logicaNegocio.Alumno</class>
+		<!-- Definimos el mecanismo de conexión a la base de datos  -->
+		<properties>
+			<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dbalumnos"/>
+			<property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="jakarta.persistence.jdbc.user" value="usuario"/>
+			<property name="jakarta.persistence.jdbc.password" value="usuario"/>
+			
+			<!-- Propiedades solo para desarollo, si las tablas no existen se creen automáticamente, pero cada vez que invocamos al mecanismo de persistencia las borra y las vuelve a crear (otros valores: none, create-tables) -->
+			<property name="eclipselink.ddl-generation" value="create-tables"/>
+			<property name="eclipselink.ddl-generation.output-mode" value="both"/>
+		</properties>
+	</persistence-unit>
+	
+	 <!-- 
+	<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://172.16.0.118:3306/dbalumnos"/>
+		<property name="jakarta.persistence.jdbc.user" value="mp7"/>
+		<property name="jakarta.persistence.jdbc.password" value="secreto"/>
+	-->
+</persistence>
