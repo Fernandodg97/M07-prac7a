@@ -20,6 +20,7 @@
         <li><strong>Java Servlets</strong>: Controlador principal.</li>
         <li><strong>HTML, JSP y JSTL</strong>: Capas de presentación.</li>
         <li><strong>Java</strong>: Lógica de negocio separada en clases.</li>
+        <li><strong>JPA (Java Persistence API)</strong>: Tecnología para la gestión de la base de datos y la persistencia de los datos.</li>
     </ul>
     <h2>Instalación y Uso</h2>
     <ol>
@@ -28,10 +29,16 @@
         <li>Configurar Tomcat 10.1.28 como servidor.</li>
         <li>Ejecutar la aplicación y acceder a través del navegador.</li>
     </ol>
-    <h2>Configuracion</h2>
+    <h2>Configuración</h2>
     <ul>
-        <li>Cambiar BBDD: En Conexion.java, se modifican las variables: dbURL, user y pass.</li>
-        <li>Cambiar o añadir usuarios: En Login.java, en la linea 63 dentro del validarUsuario. Se añade el usuario o se modifica el existente.</li>
+        <li>Cambiar BBDD: En `Conexion.java`, se modifican las variables: `dbURL`, `user` y `pass`.</li>
+        <li>Cambiar o añadir usuarios: En `Login.java`, en la línea 63 dentro del método `validarUsuario`, se añade el usuario o se modifica el existente.</li>
+        <li>Para modificar la base de datos que se usa en el informe, se deben modificar las líneas 11, 12 y 13 del archivo `persistence.xml`:</li>
+        <pre>
+            &lt;property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dbalumnos"/&gt;
+            &lt;property name="jakarta.persistence.jdbc.user" value="usuario"/&gt;
+            &lt;property name="jakarta.persistence.jdbc.password" value="usuario"/&gt;
+        </pre>
     </ul>
     <h2>Autor</h2>
     <p>Fernando DG</p>
