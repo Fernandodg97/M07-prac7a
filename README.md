@@ -26,6 +26,7 @@
     <ol>
         <li>Clonar el repositorio.</li>
         <li>Importar el proyecto en Eclipse.</li>
+        <li>Maven --> Update Project...</li>
         <li>Configurar Tomcat 10.1.28 como servidor.</li>
         <li>Ejecutar la aplicación y acceder a través del navegador.</li>
     </ol>
